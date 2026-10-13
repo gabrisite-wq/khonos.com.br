@@ -1,6 +1,4 @@
 <?php
-// Os kits usam temporariamente o anuncio unitario; substitua pelas URLs dos kits em producao.
-// Precos demonstrativos em centavos: substitua pelos valores reais antes da publicacao.
 $purchaseOptions = [
     'masculino' => [
         '1 camiseta' => [
@@ -52,7 +50,7 @@ $purchaseOptions = [
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=2.5">
+    <link rel="stylesheet" href="style.css?v=3.0">
 </head>
 <body>
     <?php include "header.php"; ?>

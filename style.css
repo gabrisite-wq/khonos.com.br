@@ -65,11 +65,11 @@ main.container,
     width: 100%;
     max-width: 100% !important;
     margin: 0;
-    padding: 0;
+    padding-inline: clamp(1rem, 4vw, 3rem);
 }
 
 section { 
-    padding: 2rem 0 0; 
+    padding: clamp(1.25rem, 4vw, 2rem) 0 0;
 }
 
 .hero > *,
@@ -93,7 +93,7 @@ header {
 }
 
 #hdr {
-    padding: 0 2rem; 
+    padding: 0;
 }
 
 
@@ -105,7 +105,7 @@ header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    padding: 10px 24px;
+    padding: 0.65rem clamp(1rem, 4vw, 3rem);
     box-shadow: 0 5px 16px rgba(21, 16, 4, 0.04);
 }
 
@@ -132,13 +132,16 @@ header {
     align-items: center;
     justify-content: space-between;
     min-height: auto;
-    padding: 1rem 0;
+    padding: 0.75rem 0;
     flex-wrap: wrap;
     gap: 0.9rem;
 }
 
 #current-page {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    isolation: isolate;
 }
 
 #current-page::before {
@@ -150,7 +153,6 @@ header {
     height: 4rem;
     background-color: var(--bg);
     z-index: -1;
-    border-radius: 10px 0 0 0;
 }
 
 .brand {
@@ -202,7 +204,7 @@ header {
     flex: 1;
     flex-wrap: wrap;
     justify-content: flex-end;
-    gap: 0.5rem 0.9rem;
+    gap: 0.5rem 2rem;
     min-width: 0;
     margin: 0;
 }
@@ -210,7 +212,7 @@ header {
 .topbar nav a {
     color: var(--ink);
     font-family: var(--font-ui);
-    font-size: 0.68rem;
+    font-size: 0.62rem;
     font-weight: 700;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -240,8 +242,8 @@ header {
 .hero {
     display: grid;
     grid-template-columns: minmax(0, 1fr);
-    gap: 2rem;
-    padding: 2.2rem 1rem 2.5rem;
+    gap: clamp(1.25rem, 4vw, 2rem);
+    padding: 1.5rem 0 2rem;
     align-items: center;
     max-width: 100%;
 }
@@ -291,8 +293,8 @@ header {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 70vh;
-    max-height: 70svh;
+    max-height: 68vh;
+    max-height: 68svh;
     object-fit: contain;
     object-position: center 28%;
     margin-bottom: 1rem;
@@ -325,8 +327,8 @@ header {
     text-decoration: none;
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    padding: 1rem 0.5rem;
+    border-radius: 0;
+    padding: 1rem;
     cursor: pointer;
     transition: color var(--motion-duration) var(--motion-ease),
         box-shadow var(--motion-duration) var(--motion-ease);
@@ -341,7 +343,7 @@ header {
     display: grid;
     place-items: center;
     grid-template-columns: minmax(0, 1fr);
-    gap: 1.5rem;
+    gap: clamp(1rem, 3vw, 1.5rem);
     margin-top: 1rem;
     padding: 0;
     width: 100%;
@@ -355,8 +357,8 @@ header {
     width: 100%;
     background: var(--card);
     border: 1px solid var(--border);
-    border-radius: 0.5rem;
-    padding: 1.2rem;
+    border-radius: 0;
+    padding: clamp(1rem, 3vw, 1.5rem);
     box-shadow: 0 10px 24px rgba(112, 82, 71, 0.05);
 }
 
@@ -365,9 +367,10 @@ header {
     width: 100%;
     max-height: 70vh;
     max-height: 70svh;
-    border-radius: 0.35rem;
+    border-radius: 0;
     margin-bottom: 0.8rem;
     object-fit: contain;
+    object-position: center;
 }
 
 .product-card h3, .product-card-p h3 { 
@@ -410,8 +413,8 @@ header {
 .cta {
     background: linear-gradient(135deg, var(--gold) 0%, #eccb89 100%);
     border-left: 6px solid var(--terracotta);
-    border-radius: 0.5rem;
-    padding: 2rem 1rem;
+    border-radius: 0;
+    padding: clamp(1.5rem, 5vw, 2rem) clamp(1rem, 4vw, 2rem);
     text-align: center;
     margin: 2.5rem 0 3rem;
     box-sizing: border-box;
@@ -435,8 +438,9 @@ footer {
 /* Buttons */
 .button {
     display: inline-block;
+    min-height: 44px;
     padding: 0.8rem 1.2rem;
-    border-radius: 0.35rem;
+    border-radius: 0;
     font-weight: 700;
     font-family: var(--font-ui);
     max-width: 100%;
@@ -528,7 +532,7 @@ footer {
     list-style: none;
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 0.35rem;
+    border-radius: 0;
     font-family: var(--font-ui);
     font-size: 0.9rem;
 }
@@ -537,9 +541,10 @@ footer {
 .purchase-options button {
     display: block;
     width: 100%;
+    min-height: 3.5rem;
     padding: 0.75rem;
     border: 0;
-    border-radius: 0.25rem;
+    border-radius: 0;
     background: transparent;
     color: var(--ink);
     font: inherit;
@@ -547,6 +552,39 @@ footer {
     overflow-wrap: break-word;
     transition: color var(--motion-duration) var(--motion-ease),
         background-color var(--motion-duration) var(--motion-ease);
+}
+
+.purchase-options a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: left;
+}
+
+.purchase-label {
+    min-width: 0;
+    overflow-wrap: anywhere;
+}
+
+.purchase-price {
+    display: flex;
+    flex: 0 0 auto;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.1rem;
+    text-align: right;
+}
+
+.purchase-price strong {
+    color: var(--terracotta);
+    font-size: 1.05rem;
+    line-height: 1.2;
+}
+
+.purchase-price small {
+    color: var(--muted);
+    font-size: 0.7rem;
 }
 
 .purchase-options a:hover,
@@ -601,10 +639,9 @@ footer {
 .hero-slider {
     position: relative;
     width: 100%;
-    height: 70vh;
-    height: 70svh;
+    height: min(70vh, 70svh);
+    min-height: 18rem;
     overflow: hidden;
-    
 }
 
 .slider-track {
@@ -640,11 +677,11 @@ footer {
 .product-slider {
     position: relative;
     width: 100%;
-    height: 320px;
+    height: clamp(18rem, 64svh, 36rem);
     max-height: 70vh;
     max-height: 70svh;
     overflow: hidden;
-    border-radius: 0.35rem;
+    border-radius: 0;
     margin-bottom: 0.8rem;
 }
 
@@ -670,7 +707,7 @@ footer {
     border: none;
     width: 35px;
     height: 35px;
-    border-radius: 50%;
+    border-radius: 0;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -710,7 +747,7 @@ footer {
     width: 100px;
     height: 10px;
     background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 50%;
+    border-radius: 0;
     cursor: pointer;
     transition: background-color var(--motion-duration) var(--motion-ease),
         transform var(--motion-duration) var(--motion-ease);
@@ -746,6 +783,22 @@ footer {
 /* ==========================================================================
    9. MEDIA QUERIES (Mobile first: tablet e desktop)
    ================================================================---------- */
+@media (min-width: 400px) and (max-width: 640px) {
+    .topbar {
+        flex-wrap: nowrap;
+        gap: 0.9rem;
+    }
+
+    .brand {
+        width: 120px;
+        flex-basis: 120px;
+    }
+
+    .brand-wordmark {
+        display: block;
+    }
+}
+
 @media (min-width: 641px) {
     .slider-slide.slide-1 { background-image: url('src/images/variacoes-site/1-f-tab.png'); }
     .slider-slide.slide-2 { background-image: url('src/images/variacoes-site/calcadao-m-tab.png'); }
@@ -753,7 +806,7 @@ footer {
 
     .topbar {
         min-height: 4rem;
-        padding: 0;
+        padding: 0.5rem 0;
         flex-wrap: nowrap;
         gap: 1.5rem;
     }
@@ -799,26 +852,51 @@ footer {
     .nh {
         padding: 1.5rem;
     }
-}
-
-@media (min-width: 1033px) {
-    .slider-slide.slide-1 { background-image: url('src/images/variacoes-site/Header.png'); }
-    .slider-slide.slide-2 { background-image: url(''); }
-    .slider-slide.slide-3 { background-image: url(''); }
-
-    .hero {
-        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
-        padding: 3.4rem 2rem 2.5rem;
-    }
 
     .hero-slider {
-        height: 80vh;
-        height: 80svh;
+        height: min(72vh, 72svh);
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        padding-block: 2.5rem;
+    }
+
+    .hero h1,
+    .hero p {
+        text-align: left;
+    }
+
+    .hero-actions {
+        justify-content: flex-start;
     }
 
     .products-grid,
     .products-grid-p {
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        padding: 0 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1033px) {
+    .slider-slide.slide-1 { background-image: url('src/images/variacoes-site/Header.png'); }
+    .slider-slide.slide-2 { background-image: url('src/images/variacoes-site/praia-f-16x9.png'); }
+    .slider-slide.slide-3 { background-image: url('src/images/variacoes-site/fam-pr.png'); }
+
+    .hero {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+        padding-block: 3rem 2.5rem;
+    }
+
+    .hero-slider {
+        height: clamp(24rem, 40vw, 42rem);
+        max-height: 80svh;
+    }
+
+    .products-grid,
+    .products-grid-p {
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+        padding: 0;
     }
 }
