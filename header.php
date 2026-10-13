@@ -1,0 +1,39 @@
+<header>
+    <div id="kh-b-line">
+        <h1>
+            Aratã by Khonos
+        </h1>
+    </div>
+    <div id="hdr">
+        <div class="brand-strip">
+            <div class="container">Aratã by Khono's</div>
+        </div>
+        <div class="container topbar">
+            <a href="index.php" class="brand" aria-label="Aratã by Khono's">
+                <span class="brand-submark" aria-hidden="true">
+                    <img src="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/isotipo-arata-positivo-azul-marinho.png" alt="" />
+                </span>
+                <img class="brand-wordmark" src="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/arata-azul-marinho.png" alt="Aratã by Khono's" />
+            </a>
+            
+            <?php 
+            // Fixed $_SERVER capitalization
+             
+            ?>
+            
+            <nav>
+                <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'quem-somos') !== false) ? 'id="current-page"' : ''; ?> href="quem-somos.php">Quem somos</a>
+                <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'objetivo') !== false) ? 'id="current-page"' : ''; ?> href="objetivo.php">Objetivo</a>
+                
+                <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'products') !== false) ? 'id="current-page"' : ''; ?> href="products.php">Coleção</a>
+            </nav>
+        </div>
+    </div> 
+    <!--
+    <nav class="collection-nav" aria-label="Coleções">
+        <a href="index.php#produtos">Fitness</a>
+        <a href="#produtos">Sleepwear</a>
+        <a href="#produtos">Casual</a>
+    </nav>
+    -->
+</header>
