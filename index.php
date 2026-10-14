@@ -77,7 +77,7 @@
             <a class="button button-secondary" href="https://wa.me/message/5CULJK6YITB4O1">Entrar em contato</a>
         </section>
     </main>
-
+    <?php include "whatsapp-button.php"; ?>
     <?php include "footer.php"; ?>
 
     <script>
