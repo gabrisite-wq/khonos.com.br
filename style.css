@@ -68,6 +68,10 @@ main.container,
     padding-inline: clamp(1rem, 4vw, 3rem);
 }
 
+.container.full-bleed-page {
+    padding-inline: 0;
+}
+
 section { 
     padding: clamp(1.25rem, 4vw, 2rem) 0 0;
 }
@@ -300,6 +304,10 @@ header {
     object-fit: contain;
     object-position: center 28%;
     margin-bottom: 1rem;
+}
+
+.hero > div:first-child {
+    padding-inline: clamp(1rem, 4vw, 3rem);
 }
 
 /* ==========================================================================
@@ -674,29 +682,34 @@ footer {
 .hero-slider {
     position: relative;
     width: 100%;
-    height: min(70vh, 70svh);
-    min-height: 18rem;
+    height: auto;
+    min-height: 0;
     overflow: hidden;
 }
 
 .slider-track {
+    display: grid;
     position: relative;
     width: 100%;
-    height: 100%;
 }
 
 .slider-slide {
+    grid-area: 1 / 1;
     position: absolute;
-    top: 0;
-    left: 0;
+    inset: 0;
     width: 100%;
-    height: 100%;
-    background-size: cover;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     opacity: 0;
     transition: opacity var(--motion-slow) var(--motion-ease);
     pointer-events: none;
+}
+
+.slider-slide.active {
+    position: relative;
 }
 
 .slider-slide.active,
@@ -835,6 +848,8 @@ footer {
 }
 
 @media (min-width: 641px) {
+    .slider-slide { aspect-ratio: 4 / 3; }
+
     .slider-slide.slide-1 { background-image: url('src/images/variacoes-site/1-f-tab.png'); }
     .slider-slide.slide-2 { background-image: url('src/images/variacoes-site/calcadao-m-tab.png'); }
     .slider-slide.slide-3 { background-image: url('src/images/variacoes-site/praia-m-tab.png'); }
@@ -888,9 +903,6 @@ footer {
         padding: 1.5rem;
     }
 
-    .hero-slider {
-        height: min(72vh, 72svh);
-    }
 }
 
 @media (min-width: 768px) {
@@ -915,23 +927,309 @@ footer {
 }
 
 @media (min-width: 1033px) {
-    .slider-slide.slide-1 { background-image: url('src/images/variacoes-site/Header.png'); }
-    .slider-slide.slide-2 { background-image: url('src/images/variacoes-site/praia-f-16x9.png'); }
-    .slider-slide.slide-3 { background-image: url('src/images/variacoes-site/fam-pr.png'); }
+    .slider-slide.slide-1 {
+        background-image: url('src/images/variacoes-site/Header.png');
+        aspect-ratio: 1944 / 809;
+    }
+    .slider-slide.slide-2 {
+        background-image: url('src/images/variacoes-site/praia-f-16x9.png');
+        aspect-ratio: 1672 / 941;
+    }
+    .slider-slide.slide-3 {
+        background-image: url('src/images/variacoes-site/fam-pr.png');
+        aspect-ratio: 1402 / 1122;
+    }
 
     .hero {
         grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
         padding-block: 3rem 2.5rem;
     }
 
-    .hero-slider {
-        height: clamp(24rem, 40vw, 42rem);
-        max-height: 80svh;
-    }
-
     .products-grid,
     .products-grid-p {
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
         padding: 0;
+    }
+}
+
+.objective-page {
+    padding-top: 0;
+    padding-bottom: clamp(2rem, 6vw, 5rem);
+}
+
+.objective-page > .objective-hero {
+    padding-top: 0;
+}
+
+.objective-hero {
+    display: grid;
+    overflow: hidden;
+    background: var(--terracotta);
+}
+
+.objective-hero__photo {
+    position: relative;
+    grid-area: 1 / 1;
+    width: 100%;
+}
+
+.objective-hero__photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, rgba(21, 16, 4, 0.04) 30%, rgba(21, 16, 4, 0.48) 100%);
+}
+
+.objective-hero__photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.objective-manifesto__visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.objective-hero__content {
+    grid-area: 1 / 1;
+    position: relative;
+    align-self: end;
+    width: min(100%, 35rem);
+    min-height: 14rem;
+    margin: 0;
+    padding: clamp(1.5rem, 5vw, 3.5rem);
+    border-top: 6px solid var(--gold);
+    background: rgba(61, 42, 35, 0.96);
+    color: var(--gold-light);
+}
+
+.objective-hero__content h1 {
+    margin: 0;
+}
+
+.objective-manifesto {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: stretch;
+    margin-top: clamp(2rem, 6vw, 5rem);
+    background: #f2eadb;
+}
+
+.objective-manifesto__visual {
+    min-height: 26rem;
+    overflow: hidden;
+}
+
+.objective-manifesto__visual img {
+    object-position: center 42%;
+}
+
+.objective-manifesto__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    padding: clamp(2rem, 6vw, 5rem);
+    border-bottom: 5px solid var(--green);
+}
+
+.objective-mark {
+    display: block;
+    width: 4rem;
+    height: 4px;
+    margin-bottom: 1.5rem;
+    background: var(--gold);
+}
+
+.objective-manifesto__content h2 {
+    width: 100%;
+    min-height: 3.5rem;
+    margin: 0 0 1rem;
+}
+
+.objective-manifesto__content p {
+    width: 100%;
+    min-height: 0;
+    margin: 0;
+    color: var(--muted);
+}
+
+.objective-manifesto__content p + p {
+    margin-top: 1rem;
+}
+
+.objective-manifesto--vision .objective-manifesto__visual {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.objective-manifesto--vision .objective-manifesto__content {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.objective-statement {
+    margin-top: clamp(2rem, 6vw, 5rem);
+    padding: clamp(2rem, 6vw, 5rem);
+    border-left: 6px solid var(--green);
+    background: var(--terracotta);
+    color: var(--gold-light);
+}
+
+.objective-statement .objective-mark {
+    background: var(--gold);
+}
+
+.objective-statement h2,
+.objective-values > h2,
+.objective-essence h2 {
+    margin: 0 0 1rem;
+    font-size: 2rem;
+}
+
+.objective-statement p {
+    max-width: 58rem;
+    margin: 0;
+}
+
+.objective-statement p + p {
+    margin-top: 1rem;
+}
+
+.objective-values {
+    margin-top: clamp(2rem, 6vw, 5rem);
+}
+
+.objective-values > h2 {
+    text-align: center;
+}
+
+.objective-pillars {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    margin-top: 1rem;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.objective-pillar {
+    min-width: 0;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.objective-pillar + .objective-pillar {
+    border-left: 1px solid var(--border);
+}
+
+.objective-pillar:nth-child(4) {
+    border-left: 0;
+}
+
+.objective-pillar:nth-child(n + 4) {
+    border-top: 1px solid var(--border);
+}
+
+.objective-pillar__index {
+    display: flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    color: var(--terracotta);
+    font-family: var(--font-ui);
+    font-size: 0.7rem;
+    font-weight: 700;
+}
+
+.objective-pillar h3 {
+    margin: 0 0 0.75rem;
+    text-transform: uppercase;
+}
+
+.objective-pillar p {
+    margin: 0;
+    color: var(--muted);
+}
+
+.objective-essence {
+    max-width: 54rem;
+    margin: clamp(2rem, 6vw, 5rem) auto 0;
+    padding: clamp(1.5rem, 4vw, 3rem) 0 0;
+    border-top: 3px solid var(--gold);
+    text-align: center;
+}
+
+.objective-essence__lead {
+    color: var(--terracotta);
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.objective-essence p:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 900px) {
+    .objective-pillars {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .objective-pillar:nth-child(4) {
+        border-left: 1px solid var(--border);
+    }
+
+    .objective-pillar:nth-child(odd) {
+        border-left: 0;
+    }
+
+    .objective-pillar:nth-child(3) {
+        border-top: 1px solid var(--border);
+    }
+}
+
+@media (max-width: 640px) {
+    .objective-hero__content {
+        min-height: 12rem;
+        width: 92%;
+    }
+
+    .objective-manifesto {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .objective-manifesto--vision .objective-manifesto__visual,
+    .objective-manifesto--vision .objective-manifesto__content {
+        grid-column: 1;
+    }
+
+    .objective-manifesto--vision .objective-manifesto__visual {
+        grid-row: 1;
+    }
+
+    .objective-manifesto--vision .objective-manifesto__content {
+        grid-row: 2;
+    }
+
+    .objective-manifesto__visual {
+        min-height: 20rem;
+        max-height: 55svh;
+    }
+
+    .objective-pillars {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .objective-pillar + .objective-pillar,
+    .objective-pillar:nth-child(4),
+    .objective-pillar:nth-child(odd) {
+        border-top: 1px solid var(--border);
+        border-left: 0;
     }
 }

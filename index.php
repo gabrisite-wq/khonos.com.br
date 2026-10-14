@@ -13,12 +13,12 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=3.0">
+    <link rel="stylesheet" href="style.css?v=3.2">
 </head>
 <body>
     <?php include "header.php"; ?>
     
-    <main class="container">
+    <main class="container full-bleed-page">
         <section class="slider">
             <div class="hero-slider">
                 <div class="slider-track">
