@@ -41,8 +41,9 @@ $purchaseOptions = [
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Aratã by Khono's</title>
+    <title>Coleções</title>
     <meta name="description" content="Coleções Aratã com acesso direto aos produtos no Mercado Livre." />
+    <link rel="icon" type="image/png" href="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/fav-icon-y.jpeg">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
