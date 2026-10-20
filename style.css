@@ -1184,3 +1184,198 @@ footer {
     outline: 3px solid var(--green);
     outline-offset: 3px;
 }
+
+.home-intro.hero {
+    position: relative;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 0;
+    margin-top: clamp(1.5rem, 4vw, 3rem);
+    padding: 0;
+    overflow: hidden;
+    border-top: 6px solid var(--gold);
+    border-left: 0;
+    background: #f2eadb;
+}
+
+.home-intro.hero::before {
+    display: none;
+}
+
+.home-intro__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-width: 0;
+    padding: clamp(1.5rem, 5vw, 4rem);
+    border-bottom: 5px solid var(--green);
+}
+
+.home-intro .eyebrow {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--green-deep);
+    font-family: var(--font-ui);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.home-intro h1 {
+    text-align: left;
+}
+
+.home-intro p {
+    text-align: left;
+}
+
+.home-intro .hero-actions {
+    justify-content: flex-start;
+}
+
+.home-intro__visual {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(1rem, 3vw, 2rem);
+    background: #e8dcc7;
+}
+
+.home-intro .hero-model {
+    width: 100%;
+    max-height: min(42rem, 82svh);
+    margin: 0;
+    object-position: center;
+}
+
+.home-intro .stats {
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0;
+    margin-top: 1.5rem;
+}
+
+.home-intro .stats div {
+    padding: 0.5rem clamp(0.25rem, 1vw, 0.75rem);
+}
+
+.home-intro .stats div + div {
+    border-left: 1px solid var(--border);
+}
+
+.home-intro .stats strong {
+    color: var(--terracotta);
+}
+
+.home-intro .stats span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+.home-collection {
+    padding-top: clamp(2rem, 5vw, 4rem);
+}
+
+.home-collection__panel {
+    border-top: 5px solid var(--gold);
+    background: linear-gradient(180deg, #fff, var(--bg));
+    padding: clamp(1rem, 3vw, 2rem);
+}
+
+.home-collection__panel .products-grid {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 58rem;
+    margin-inline: auto;
+}
+
+.home-collection__panel .product-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: clamp(1rem, 3vw, 2rem);
+    border-top: 0;
+    border-left: 4px solid var(--green);
+    background: #f2eadb;
+    box-shadow: none;
+    text-align: left;
+}
+
+.home-collection__panel .product-visual {
+    grid-row: span 2;
+    max-height: 24rem;
+    margin: 0;
+    object-fit: contain;
+}
+
+.home-collection__panel .product-card h3,
+.home-collection__panel .product-card p {
+    margin: 0;
+    text-align: left;
+}
+
+.home-collection__panel .product-card h3 {
+    align-self: end;
+}
+
+.home-collection__panel .product-card p {
+    align-self: start;
+}
+
+.home-contact.cta {
+    position: relative;
+    margin-top: clamp(2rem, 5vw, 4rem);
+    border-left-color: var(--gold);
+    background: var(--terracotta);
+    color: var(--gold-light);
+}
+
+.home-contact h2 {
+    color: var(--gold-light);
+}
+
+.home-contact p {
+    color: #f2eadb;
+}
+
+@media (max-width: 767px) {
+    .home-intro.hero {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .home-intro__content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .home-intro h1,
+    .home-intro p {
+        text-align: center;
+    }
+
+    .home-intro .hero-actions {
+        justify-content: center;
+    }
+
+    .home-intro__visual {
+        border-top: 4px solid var(--gold);
+    }
+}
+
+@media (max-width: 480px) {
+    .home-collection__panel .product-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .home-collection__panel .product-visual {
+        grid-row: auto;
+        max-height: 20rem;
+    }
+
+    .home-collection__panel .product-card h3,
+    .home-collection__panel .product-card p {
+        text-align: center;
+    }
+}

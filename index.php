@@ -13,7 +13,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=3.7">
+    <link rel="stylesheet" href="style.css?v=3.9">
 </head>
 <body>
     <?php include "header.php"; ?>
@@ -36,8 +36,8 @@
             </div>
         </section>
 
-        <section class="hero">
-            <div>
+        <section class="hero home-intro">
+            <div class="home-intro__content">
                 <span class="eyebrow">Aratã by Khono's</span>
                 <h1>Peças que acompanham o ritmo brasileiro, do descanso ao dia a dia.</h1>
                 <p>Do ritmo da cidade aos dias de sol, as coleções Aratã unem conforto, presença e liberdade para viver o Brasil do seu jeito.</p>
@@ -50,13 +50,13 @@
                     <div><strong>Estilo</strong><span>que acompanha você</span></div>
                 </div>
             </div>
-            <div class="hero-card">
+            <div class="hero-card home-intro__visual">
                 <img class="hero-model" src="src/images/fem/conj-roxo-esc.png" alt="Modelo vestindo conjunto Aratã" />
             </div>
         </section>
 
-        <section id="produtos">
-            <a class="nh" href="products.php">
+        <section id="produtos" class="home-collection">
+            <a class="nh home-collection__panel" href="products.php">
                 <div class="section-title">
                     <h2>Encontre sua coleção</h2>
                     <p>Escolhas para acompanhar o seu movimento, o seu descanso e o seu cotidiano.</p>
@@ -71,7 +71,7 @@
             </a>
         </section>
 
-        <section class="cta" id="contato">
+        <section class="cta home-contact" id="contato">
             <h2>Vista a sua melhor versão.</h2>
             <p>Fale com a Aratã e encontre peças que se conectam com o seu dia a dia.</p>
             <a class="button button-secondary" href="https://wa.me/message/5CULJK6YITB4O1">Entrar em contato</a>
