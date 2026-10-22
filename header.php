@@ -16,12 +16,10 @@
                 <img class="brand-wordmark" src="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/arata-azul-marinho.png" alt="Aratã by Khono's" />
             </a>
             
-            <?php 
-            // Fixed $_SERVER capitalization
-             
-            ?>
-            
-            <nav>
+            <button class="header-menu-toggle" type="button" aria-expanded="false" aria-controls="header-navigation">
+                Menu <span class="purchase-chevron" aria-hidden="true"></span>
+            </button>
+            <nav id="header-navigation" aria-label="Navegação principal">
                 <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'quem-somos') !== false) ? 'id="current-page"' : ''; ?> href="quem-somos.php">Quem somos</a>
                 <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'objetivo') !== false) ? 'id="current-page"' : ''; ?> href="objetivo.php">Objetivo</a>
                 
@@ -38,3 +36,37 @@
     </nav>
     -->
 </header>
+<script>
+(() => {
+    const topbar = document.querySelector('.topbar');
+    const toggle = topbar.querySelector('.header-menu-toggle');
+    const navigation = topbar.querySelector('nav');
+    const mobile = window.matchMedia('(max-width: 640px)');
+
+    function setMenuOpen(open) {
+        toggle.setAttribute('aria-expanded', String(open));
+        topbar.classList.toggle('is-menu-open', open);
+        navigation.inert = mobile.matches && !open;
+    }
+
+    topbar.classList.add('has-mobile-menu');
+    setMenuOpen(false);
+    toggle.addEventListener('click', () => setMenuOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    topbar.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+            setMenuOpen(false);
+            toggle.focus();
+        }
+    });
+    document.addEventListener('click', event => {
+        if (!topbar.contains(event.target)) setMenuOpen(false);
+    });
+    topbar.addEventListener('focusout', event => {
+        if (!topbar.contains(event.relatedTarget)) setMenuOpen(false);
+    });
+    navigation.addEventListener('click', event => {
+        if (event.target.closest('a')) setMenuOpen(false);
+    });
+    mobile.addEventListener('change', () => setMenuOpen(false));
+})();
+</script>

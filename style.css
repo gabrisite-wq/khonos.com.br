@@ -132,6 +132,10 @@ header {
     display: none;
 }
 
+.header-menu-toggle {
+    display: none;
+}
+
 .topbar {
     display: flex;
     align-items: center;
@@ -837,10 +841,93 @@ footer {
 /* ==========================================================================
    9. MEDIA QUERIES (Mobile first: tablet e desktop)
    ================================================================---------- */
-@media (min-width: 400px) and (max-width: 640px) {
+@media (max-width: 640px) {
     .topbar {
+        position: relative;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .topbar.has-mobile-menu {
         flex-wrap: nowrap;
-        gap: 0.9rem;
+    }
+
+    .header-menu-toggle {
+        min-height: 44px;
+        margin-right: 1rem;
+        padding: 0.65rem 0.5rem;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        color: var(--terracotta);
+        font-family: var(--font-ui);
+        font-weight: 700;
+        cursor: pointer;
+    }
+
+    .has-mobile-menu .header-menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        gap: 0.65rem;
+        line-height: 1.2;
+    }
+
+    .header-menu-toggle .purchase-chevron {
+        flex-shrink: 0;
+        margin: -0.2rem 0 0;
+    }
+
+    .is-menu-open .header-menu-toggle .purchase-chevron {
+        transform: rotate(225deg);
+    }
+
+    .topbar nav {
+        flex: 0 0 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        margin: 0;
+        padding: 0.5rem 1rem;
+        background: var(--bg);
+        border: 0;
+    }
+
+    .has-mobile-menu nav {
+        position: absolute;
+        inset: 100% 0 auto;
+        max-height: calc(100svh - 8rem);
+        overflow-y: auto;
+        box-shadow: 0 8px 16px rgba(21, 16, 4, 0.15);
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(-0.5rem);
+        transition: opacity var(--motion-duration) var(--motion-ease),
+            transform var(--motion-duration) var(--motion-ease),
+            visibility var(--motion-duration);
+    }
+
+    .has-mobile-menu.is-menu-open nav {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .topbar nav a {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .topbar nav #current-page {
+        border: 0;
+        background: var(--gold-light);
+        color: var(--terracotta);
+    }
+
+    #current-page::before {
+        display: none;
     }
 
     .brand {
