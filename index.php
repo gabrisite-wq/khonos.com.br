@@ -13,7 +13,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=4.5">
+    <link rel="stylesheet" href="style.css?v=5.5">
 </head>
 <body>
     <?php include "header.php"; ?>
@@ -25,13 +25,16 @@
                     <div class="slider-slide active slide-1"></div>
                     <div class="slider-slide slide-2"></div>
                     <div class="slider-slide slide-3"></div>
+                    <div class="slider-slide slide-4"></div>
                 </div>
-                <button type="button" class="slider-btn prev" onclick="moveSlide(this, -1)">&lt;</button>
-                <button type="button" class="slider-btn next" onclick="moveSlide(this, 1)">&gt;</button>
+                <button type="button" class="slider-btn prev" aria-label="Slide anterior" onclick="moveSlide(this, -1)">&lt;</button>
+                <button type="button" class="slider-btn next" aria-label="Próximo slide" onclick="moveSlide(this, 1)">&gt;</button>
+                <button type="button" class="slider-autoplay" aria-pressed="false">Pausar slides</button>
                 <div class="slider-dots">
                     <span class="dot active" onclick="goToSlide(this, 0)"></span>
                     <span class="dot" onclick="goToSlide(this, 1)"></span>
                     <span class="dot" onclick="goToSlide(this, 2)"></span>
+                    <span class="dot" onclick="goToSlide(this, 3)"></span>
                 </div>
             </div>
         </section>
@@ -51,7 +54,10 @@
                 </div>
             </div>
             <div class="hero-card home-intro__visual">
-                <img class="hero-model" src="src/images/fem/conj-roxo-esc.png" alt="Modelo vestindo conjunto Aratã" />
+                <!-- Substitua about:blank por https://www.youtube.com/embed/ID_DO_VIDEO. -->
+                <iframe class="home-intro__video" src="about:blank" title="Vídeo Aratã by Khono's"
+                    loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -82,14 +88,13 @@
 
     <script>
       function updateSlider(slider, newIndex) {
-        const slides = slider.querySelectorAll('.slider-slide');
-        const dots = slider.querySelectorAll('.dot');
+        const slides = Array.from(slider.querySelectorAll('.slider-slide')).filter(slide => getComputedStyle(slide).display !== 'none');
+        const dots = Array.from(slider.querySelectorAll('.dot')).filter(dot => getComputedStyle(dot).display !== 'none');
         
         if (newIndex >= slides.length) newIndex = 0;
         if (newIndex < 0) newIndex = slides.length - 1;
 
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
+        slider.querySelectorAll('.slider-slide, .dot').forEach(item => item.classList.remove('active'));
 
         slides[newIndex].classList.add('active');
         
@@ -100,7 +105,7 @@
 
       function moveSlide(btn, direction) {
         const slider = btn.closest('.hero-slider, .product-slider, .slider');
-        const slides = slider.querySelectorAll('.slider-slide');
+        const slides = Array.from(slider.querySelectorAll('.slider-slide')).filter(slide => getComputedStyle(slide).display !== 'none');
         const currentIndex = Array.from(slides).findIndex(slide => slide.classList.contains('active'));
         updateSlider(slider, currentIndex + direction);
       }
@@ -109,6 +114,40 @@
         const slider = dot.closest('.hero-slider, .product-slider, .slider');
         updateSlider(slider, index);
       }
+
+      window.matchMedia('(min-width: 641px)').addEventListener('change', () => {
+        document.querySelectorAll('.hero-slider').forEach(slider => updateSlider(slider, 0));
+      });
+
+      document.querySelectorAll('.hero-slider').forEach(slider => {
+        const toggle = slider.querySelector('.slider-autoplay');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let paused = reducedMotion.matches;
+        let timer;
+
+        function syncAutoplay() {
+          clearInterval(timer);
+          toggle.setAttribute('aria-pressed', String(paused));
+          toggle.textContent = paused ? 'Reproduzir slides' : 'Pausar slides';
+          if (paused || document.hidden || slider.matches(':hover') || slider.contains(document.activeElement)) return;
+          timer = setInterval(() => moveSlide(slider, 1), 5000);
+        }
+
+        toggle.addEventListener('click', () => {
+          paused = !paused;
+          syncAutoplay();
+        });
+        slider.addEventListener('mouseenter', syncAutoplay);
+        slider.addEventListener('mouseleave', syncAutoplay);
+        slider.addEventListener('focusin', syncAutoplay);
+        slider.addEventListener('focusout', () => setTimeout(syncAutoplay, 0));
+        document.addEventListener('visibilitychange', syncAutoplay);
+        reducedMotion.addEventListener('change', () => {
+          paused = reducedMotion.matches;
+          syncAutoplay();
+        });
+        syncAutoplay();
+      });
     </script>
 </body>
 </html>

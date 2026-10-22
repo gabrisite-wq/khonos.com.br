@@ -51,7 +51,7 @@ $purchaseOptions = [
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=4.5">
+    <link rel="stylesheet" href="style.css?v=5.3">
 </head>
 <body>
     <?php include "header.php"; ?>
