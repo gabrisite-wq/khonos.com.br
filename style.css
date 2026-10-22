@@ -1195,8 +1195,8 @@ footer {
     overflow: hidden;
     border-top: 6px solid var(--gold);
     border-left: 0;
-    background: var(--terracotta);
-    color: var(--gold-light);
+    background: #f2eadb;
+    color: var(--ink);
 }
 
 .home-intro.hero::before {
@@ -1227,24 +1227,14 @@ footer {
 }
 
 .home-intro h1 {
-    color: var(--gold-light);
+    color: var(--terracotta);
     text-align: left;
     line-height: 1.2;
 }
 
 .home-intro p {
-    color: #f2eadb;
+    color: var(--muted);
     text-align: left;
-}
-
-.home-intro .eyebrow {
-    color: var(--gold);
-}
-
-.home-intro .button-primary {
-    border-color: var(--gold);
-    background: var(--gold);
-    color: var(--terracotta);
 }
 
 .home-intro .hero-actions {
@@ -1273,7 +1263,7 @@ footer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     margin-top: 1.5rem;
-    border-top-color: rgba(245, 227, 188, 0.3);
+    border-top-color: var(--border);
 }
 
 .home-intro .stats div {
@@ -1281,16 +1271,16 @@ footer {
 }
 
 .home-intro .stats div + div {
-    border-left: 1px solid rgba(245, 227, 188, 0.3);
+    border-left: 1px solid var(--border);
 }
 
 .home-intro .stats strong {
-    color: var(--gold-light);
+    color: var(--terracotta);
 }
 
 .home-intro .stats span {
     display: block;
-    color: #f2eadb;
+    color: var(--muted);
     font-size: 0.85rem;
 }
 
