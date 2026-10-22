@@ -953,6 +953,12 @@ footer {
         transform: translateY(0);
     }
 
+    .topbar nav a,
+    .topbar nav a:hover,
+    .topbar nav a:focus-visible {
+        color: var(--terracotta);
+    }
+
     .topbar nav a {
         min-height: 44px;
         padding: 0.75rem 1rem;

@@ -20,6 +20,7 @@
                 Menu <span class="purchase-chevron" aria-hidden="true"></span>
             </button>
             <nav id="header-navigation" aria-label="Navegação principal">
+                <a <?php $homePath = parse_url($_SERVER['REQUEST_URI'] ?? '', PHP_URL_PATH) ?: ''; echo ($homePath === '' || str_ends_with($homePath, '/') || basename($homePath) === 'index.php') ? 'id="current-page" aria-current="page"' : ''; ?> href="index.php" aria-label="Início" title="Início"><i class="fa-solid fa-house" aria-hidden="true"></i></a>
                 <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'quem-somos') !== false) ? 'id="current-page"' : ''; ?> href="quem-somos.php">Quem somos</a>
                 <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'objetivo') !== false) ? 'id="current-page"' : ''; ?> href="objetivo.php">Objetivo</a>
                 
