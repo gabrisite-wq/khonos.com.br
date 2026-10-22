@@ -26,6 +26,7 @@
                 <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'objetivo') !== false) ? 'id="current-page"' : ''; ?> href="objetivo.php">Objetivo</a>
                 
                 <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'products') !== false) ? 'id="current-page"' : ''; ?> href="products.php">Coleção</a>
+                <a <?php $currentP = $_SERVER['REQUEST_URI'] ?? ''; echo (strpos($currentP, 'contato') !== false) ? 'id="current-page"' : ''; ?> href="contato.php">Contato</a>
             </nav>
         </div>
     </div> 

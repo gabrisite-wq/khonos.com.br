@@ -13,7 +13,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=3.9">
+    <link rel="stylesheet" href="style.css?v=4.1">
 </head>
 <body>
     <?php include "header.php"; ?>
@@ -55,26 +55,26 @@
             </div>
         </section>
 
-        <section id="produtos" class="home-collection">
-            <a class="nh home-collection__panel" href="products.php">
-                <div class="section-title">
-                    <h2>Encontre sua coleção</h2>
-                    <p>Escolhas para acompanhar o seu movimento, o seu descanso e o seu cotidiano.</p>
-                </div>
-                <div class="products-grid">
-                    <article class="product-card">
-                        <img class="product-visual" src="src/images/mod-masc/4cores.jpeg" alt="Camisetas Aratã Fitness em várias cores" />
-                        <h3>Fitness</h3>
-                        <p>Liberdade para se movimentar com segurança e conforto, no seu ritmo.</p>
-                    </article>
-                </div>
-            </a>
+        <section id="produtos" class="home-collection" aria-labelledby="collection-title">
+            <div class="home-collection__visual">
+                <img class="product-visual" src="src/images/mod-masc/4cores.jpeg" alt="Camisetas Aratã Fitness em várias cores" />
+            </div>
+            <div class="home-collection__content">
+                <span class="eyebrow">Fitness</span>
+                <h2 id="collection-title">Encontre sua coleção</h2>
+                <p>Escolhas para acompanhar o seu movimento, o seu descanso e o seu cotidiano.</p>
+                <p>Liberdade para se movimentar com segurança e conforto, no seu ritmo.</p>
+                <a class="button button-primary" href="products.php">Explorar coleção Fitness</a>
+            </div>
         </section>
 
         <section class="cta home-contact" id="contato">
             <h2>Vista a sua melhor versão.</h2>
             <p>Fale com a Aratã e encontre peças que se conectam com o seu dia a dia.</p>
-            <a class="button button-secondary" href="https://wa.me/message/5CULJK6YITB4O1">Entrar em contato</a>
+            <div class="home-contact__actions">
+                <a class="button button-primary" href="contato.php">Enviar mensagem</a>
+                <a class="button button-secondary" href="https://wa.me/message/5CULJK6YITB4O1">Falar pelo WhatsApp</a>
+            </div>
         </section>
     </main>
     <?php include "whatsapp-button.php"; ?>
