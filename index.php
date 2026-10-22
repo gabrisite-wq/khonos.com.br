@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Aratã by Khono's</title>
     <meta name="description" content="Coleções Aratã com acesso direto aos produtos no Mercado Livre." />
-    <link rel="icon" type="image/png" href="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/isotipo-arata-positivo-azul-marinho.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/favicon-isotipo.png">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
