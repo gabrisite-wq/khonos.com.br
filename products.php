@@ -24,7 +24,7 @@ $purchaseOptions = [
             'quantity' => 1,
         ],
         'Kit com 2 camisetas' => [
-            'url' => '',
+            'url' => 'https://www.mercadolivre.com.br/kit-duas-2-camiseta-careca-feminina-arata-malha-mid-fio-40/up/MLBU5456444349',
             'price' => 17990,
             'quantity' => 2,
         ],
