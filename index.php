@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Aratã by Khono's</title>
     <meta name="description" content="Coleções Aratã com acesso direto aos produtos no Mercado Livre." />
-    <link rel="icon" type="image/png" sizes="512x512" href="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/favicon-isotipo-arredondado.png">
+    <link rel="icon" type="image/jpeg" href="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/fav-icon-y.jpeg">
     
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -54,8 +54,7 @@
                 </div>
             </div>
             <div class="hero-card home-intro__visual">
-                <!-- Substitua about:blank por https://www.youtube.com/embed/ID_DO_VIDEO. -->
-                <iframe class="home-intro__video" src="about:blank" title="Vídeo Aratã by Khono's"
+                <iframe class="home-intro__video" src="https://www.youtube.com/embed/3TW1R-y08qg" title="Vídeo Aratã by Khono's"
                     loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
