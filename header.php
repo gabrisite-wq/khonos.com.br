@@ -11,9 +11,9 @@
         <div class="container topbar">
             <a href="index.php" class="brand" aria-label="Aratã by Khono's">
                 <span class="brand-submark" aria-hidden="true">
-                    <img src="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/isotipo-arata-positivo-azul-marinho.png" alt="" />
+                    <img src="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/Isotipo%20Arat%C3%A3%20-%20Original.png" alt="" />
                 </span>
-                <img class="brand-wordmark" src="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/arata-azul-marinho.png" alt="Aratã by Khono's" />
+                <img class="brand-wordmark" src="src/images/Logotipo%20-%20Varia%C3%A7%C3%B5es/Cor%20Original%20-%20PNG.png" alt="Aratã by Khono's" />
             </a>
             
             <button class="header-menu-toggle" type="button" aria-expanded="false" aria-controls="header-navigation">
