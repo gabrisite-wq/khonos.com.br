@@ -12,3 +12,7 @@
 [11-Oct-2026 18:06:32 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "," in /home1/macsou97/khonos.com.br/products.php on line 8
 [11-Oct-2026 18:06:32 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "," in /home1/macsou97/khonos.com.br/products.php on line 8
 [11-Oct-2026 18:06:33 America/Fortaleza] PHP Parse error:  syntax error, unexpected token "," in /home1/macsou97/khonos.com.br/products.php on line 8
+[24-Oct-2026 04:16:19 America/Fortaleza] Contact form email notification is not configured.
+[24-Oct-2026 04:16:19 America/Fortaleza] Contact form is not configured: create config/database.local.php.
+[24-Oct-2026 04:16:32 America/Fortaleza] Contact form email notification is not configured.
+[24-Oct-2026 04:16:32 America/Fortaleza] Contact form is not configured: create config/database.local.php.
