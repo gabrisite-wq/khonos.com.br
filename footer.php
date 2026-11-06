@@ -11,6 +11,9 @@
 <a style="color: #ff0000;" href="https://www.youtube.com/@Khonos_Arata/" aria-label="YouTube da Aratã"
   ><i class="fab fa-youtube fa-lg" aria-hidden="true"></i
 ></a>
+<a style="color: #25d366;" href="https://wa.me/message/5CULJK6YITB4O1" aria-label="WhatsApp da Aratã"
+  ><i class="fab fa-whatsapp fa-lg" aria-hidden="true"></i
+></a>
 </div> 
 
 

@@ -480,31 +480,6 @@ footer {
     transform: translateY(0);
 }
 
-.whatsapp-button-container {
-    position: fixed;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    width: 100%;
-    bottom: 1rem;
-    right: 1rem;
-    z-index: 1000;
-}
-.whatsapp-button {
-    z-index: 1000;
-    display: inline-flex;
-    border-radius: 50%;
-    overflow: hidden;
-    width: 60px;
-    height: 60px;
-    transition: transform var(--motion-duration) var(--motion-ease);
-}
-
-.whatsapp-button:hover,
-.whatsapp-button:focus-visible {
-    transform: translateY(-6px);
-}
-
 .social-medias {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(20px, 50px));

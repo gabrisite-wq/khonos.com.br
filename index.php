@@ -82,7 +82,6 @@
             </div>
         </section>
     </main>
-    <?php include "whatsapp-button.php"; ?>
     <?php include "footer.php"; ?>
 
     <script>
