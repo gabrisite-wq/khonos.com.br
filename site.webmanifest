@@ -1,0 +1,19 @@
+{
+  "name": "Aratã by Khono's",
+  "short_name": "Aratã",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#46342c",
+  "background_color": "#46342c",
+  "display": "standalone"
+}
