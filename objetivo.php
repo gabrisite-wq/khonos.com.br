@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Objetivo | Aratã</title>
     <meta name="description" content="Missão, visão, objetivo e pilares da Aratã." />
-    <link rel="icon" href="/favicon.ico?v=3" sizes="any">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=3">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=3">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="icon" href="/favicon.ico?v=4" sizes="any">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=4">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=4">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=4">
+    <link rel="manifest" href="/site.webmanifest?v=4">
     <meta name="theme-color" content="#46342c">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
