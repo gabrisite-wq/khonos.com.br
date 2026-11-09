@@ -66,11 +66,11 @@ $purchaseOptions = [
                 <article class="product-card-p">
                     <div class="product-slider">
                         <div class="slider-track">
-                            <img class="product-visual-p active" src="src/images/mod-masc/1.jpg" alt="Camiseta Aratã Fitness masculina verde" />
-                            <img class="product-visual-p" src="src/images/mod-masc/2.jpg" alt="Camiseta Aratã Fitness masculina azul-marinho" />
-                            <img class="product-visual-p" src="src/images/mod-masc/3.jpg" alt="Camiseta Aratã Fitness masculina vermelha" />
-                            <img class="product-visual-p" src="src/images/mod-masc/4.jpg" alt="Camiseta Aratã Fitness masculina azul" />
-                            <img class="product-visual-p" src="src/images/mod-masc/5.jpg" alt="Camiseta Aratã Fitness masculina branca" />
+                            <img class="product-visual-p active" src="src/images/mod-masc/1.jpg?v=2" alt="Camiseta Aratã Fitness masculina verde" />
+                            <img class="product-visual-p" src="src/images/mod-masc/2.jpg?v=2" alt="Camiseta Aratã Fitness masculina azul-marinho" />
+                            <img class="product-visual-p" src="src/images/mod-masc/3.jpg?v=2" alt="Camiseta Aratã Fitness masculina vermelha" />
+                            <img class="product-visual-p" src="src/images/mod-masc/4.jpg?v=2" alt="Camiseta Aratã Fitness masculina azul" />
+                            <img class="product-visual-p" src="src/images/mod-masc/5.jpg?v=2" alt="Camiseta Aratã Fitness masculina branca" />
                         </div>
                         <button type="button" class="slider-btn prev" aria-label="Produto anterior" onclick="moveSlide(this, -1)">&lt;</button>
                         <button type="button" class="slider-btn next" aria-label="Próximo produto" onclick="moveSlide(this, 1)">&gt;</button>
@@ -123,11 +123,11 @@ $purchaseOptions = [
                 <article class="product-card-p">
                     <div class="product-slider">
                         <div class="slider-track">
-                            <img class="product-visual-p active" src="src/images/mod-fem/1.jpg" alt="Camiseta Aratã Fitness feminina azul-marinho" />
-                            <img class="product-visual-p" src="src/images/mod-fem/2.jpg" alt="Camiseta Aratã Fitness feminina azul" />
-                            <img class="product-visual-p" src="src/images/mod-fem/3.jpg" alt="Camiseta Aratã Fitness feminina verde" />
-                            <img class="product-visual-p" src="src/images/mod-fem/4.jpg" alt="Camiseta Aratã Fitness feminina vermelha" />
-                            <img class="product-visual-p" src="src/images/mod-fem/5.jpg" alt="Camiseta Aratã Fitness feminina branca" />
+                            <img class="product-visual-p active" src="src/images/mod-fem/1.jpg?v=2" alt="Camiseta Aratã Fitness feminina azul-marinho" />
+                            <img class="product-visual-p" src="src/images/mod-fem/2.jpg?v=2" alt="Camiseta Aratã Fitness feminina azul" />
+                            <img class="product-visual-p" src="src/images/mod-fem/3.jpg?v=2" alt="Camiseta Aratã Fitness feminina verde" />
+                            <img class="product-visual-p" src="src/images/mod-fem/4.jpg?v=2" alt="Camiseta Aratã Fitness feminina vermelha" />
+                            <img class="product-visual-p" src="src/images/mod-fem/5.jpg?v=2" alt="Camiseta Aratã Fitness feminina branca" />
                         </div>
                         <button type="button" class="slider-btn prev" aria-label="Produto anterior" onclick="moveSlide(this, -1)">&lt;</button>
                         <button type="button" class="slider-btn next" aria-label="Próximo produto" onclick="moveSlide(this, 1)">&gt;</button>
