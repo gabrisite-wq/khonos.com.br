@@ -56,7 +56,7 @@ $purchaseOptions = [
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=6.2">
+    <link rel="stylesheet" href="style.css?v=6.3">
 </head>
 <body>
     <?php include "header.php"; ?>
@@ -96,44 +96,26 @@ $purchaseOptions = [
                             Um produto desenvolvido para quem valoriza qualidade premium, conforto, tecnologia e precisão em cada detalhe.
                         </p>
                     </details>
-                    <section class="purchase-price-summary" aria-label="Preços dos kits masculinos">
-                        <h4>Preços dos kits</h4>
-                        <ul>
+                    <section class="purchase-options" aria-label="Opções de compra masculinas">
+                        <h4>Escolha uma opção</h4>
+                        <ul class="purchase-options__list">
                             <?php foreach ($purchaseOptions['masculino'] as $label => $option): ?>
                                 <li>
-                                    <span><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></span>
-                                    <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
+                                    <?php if ($option['url'] !== ''): ?>
+                                        <a href="<?= htmlspecialchars($option['url'], ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer">
+                                            <span class="purchase-label"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></span>
+                                            <span class="purchase-price">
+                                                <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
+                                                <small>R$ <?= number_format($option['price'] / (100 * $option['quantity']), 2, ',', '.') ?> por camiseta</small>
+                                            </span>
+                                        </a>
+                                    <?php else: ?>
+                                        <span class="purchase-option-disabled"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> <small>Link em breve</small></span>
+                                    <?php endif; ?>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </section>
-                    <div class="purchase-dropdown">
-                        <button type="button" class="button button-primary purchase-toggle" aria-expanded="false" aria-controls="purchase-masculino" aria-label="Comprar camisetas masculinas">
-                            Comprar <span class="purchase-chevron" aria-hidden="true"></span>
-                        </button>
-                        <div class="purchase-panel" id="purchase-masculino" inert>
-                            <div class="purchase-panel-inner">
-                                <ul class="purchase-options" aria-label="Opções de compra masculinas">
-                                    <?php foreach ($purchaseOptions['masculino'] as $label => $option): ?>
-                                        <li>
-                                            <?php if ($option['url'] !== ''): ?>
-                                                <a href="<?= htmlspecialchars($option['url'], ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer">
-                                                    <span class="purchase-label"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></span>
-                                                    <span class="purchase-price">
-                                                        <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
-                                                        <small>R$ <?= number_format($option['price'] / (100 * $option['quantity']), 2, ',', '.') ?> por camiseta</small>
-                                                    </span>
-                                                </a>
-                                            <?php else: ?>
-                                                <button type="button" disabled><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> <small>Link em breve</small></button>
-                                            <?php endif; ?>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                                
-                            </div>
-                        </div>
-                    </div>
                 </article>
 
                 <article class="product-card-p">
@@ -164,44 +146,26 @@ $purchaseOptions = [
                             Um produto desenvolvido para quem valoriza qualidade premium, conforto, tecnologia e precisão em cada detalhe.
                         </p>
                     </details>
-                    <section class="purchase-price-summary" aria-label="Preços dos kits femininos">
-                        <h4>Preços dos kits</h4>
-                        <ul>
+                    <section class="purchase-options" aria-label="Opções de compra femininas">
+                        <h4>Escolha uma opção</h4>
+                        <ul class="purchase-options__list">
                             <?php foreach ($purchaseOptions['feminino'] as $label => $option): ?>
                                 <li>
-                                    <span><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></span>
-                                    <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
+                                    <?php if ($option['url'] !== ''): ?>
+                                        <a href="<?= htmlspecialchars($option['url'], ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer">
+                                            <span class="purchase-label"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></span>
+                                            <span class="purchase-price">
+                                                <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
+                                                <small>R$ <?= number_format($option['price'] / (100 * $option['quantity']), 2, ',', '.') ?> por camiseta</small>
+                                            </span>
+                                        </a>
+                                    <?php else: ?>
+                                        <span class="purchase-option-disabled"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> <small>Link em breve</small></span>
+                                    <?php endif; ?>
                                 </li>
                             <?php endforeach; ?>
                         </ul>
                     </section>
-                    <div class="purchase-dropdown">
-                        <button type="button" class="button button-primary purchase-toggle" aria-expanded="false" aria-controls="purchase-feminino" aria-label="Comprar camisetas femininas">
-                            Comprar <span class="purchase-chevron" aria-hidden="true"></span>
-                        </button>
-                        <div class="purchase-panel" id="purchase-feminino" inert>
-                            <div class="purchase-panel-inner">
-                                <ul class="purchase-options" aria-label="Opções de compra femininas">
-                                    <?php foreach ($purchaseOptions['feminino'] as $label => $option): ?>
-                                        <li>
-                                            <?php if ($option['url'] !== ''): ?>
-                                                <a href="<?= htmlspecialchars($option['url'], ENT_QUOTES, 'UTF-8') ?>" target="_blank" rel="noopener noreferrer">
-                                                    <span class="purchase-label"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></span>
-                                                    <span class="purchase-price">
-                                                        <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
-                                                        <small>R$ <?= number_format($option['price'] / (100 * $option['quantity']), 2, ',', '.') ?> por camiseta</small>
-                                                    </span>
-                                                </a>
-                                            <?php else: ?>
-                                                <button type="button" disabled><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> <small>Link em breve</small></button>
-                                            <?php endif; ?>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
-                               
-                            </div>
-                        </div>
-                    </div>
                 </article>
             </div>
         </section>
@@ -211,40 +175,6 @@ $purchaseOptions = [
     <?php include "footer.php"; ?>
 
     <script>
-        const purchaseDropdowns = document.querySelectorAll('.purchase-dropdown');
-
-        function setPurchaseExpanded(dropdown, expanded) {
-            dropdown.querySelector('.purchase-toggle').setAttribute('aria-expanded', String(expanded));
-            dropdown.querySelector('.purchase-panel').inert = !expanded;
-            dropdown.classList.toggle('is-open', expanded);
-        }
-
-        purchaseDropdowns.forEach(dropdown => {
-            const toggle = dropdown.querySelector('.purchase-toggle');
-            toggle.addEventListener('click', () => {
-                const expanded = toggle.getAttribute('aria-expanded') !== 'true';
-                purchaseDropdowns.forEach(item => setPurchaseExpanded(item, item === dropdown && expanded));
-            });
-
-            dropdown.addEventListener('keydown', event => {
-                if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-                    event.preventDefault();
-                    setPurchaseExpanded(dropdown, false);
-                    toggle.focus();
-                }
-            });
-
-            dropdown.addEventListener('focusout', event => {
-                if (!dropdown.contains(event.relatedTarget)) setPurchaseExpanded(dropdown, false);
-            });
-        });
-
-        document.addEventListener('click', event => {
-            purchaseDropdowns.forEach(dropdown => {
-                if (!dropdown.contains(event.target)) setPurchaseExpanded(dropdown, false);
-            });
-        });
-
         const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
         document.querySelectorAll('.product-description').forEach(details => {
