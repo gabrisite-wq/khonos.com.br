@@ -3,35 +3,45 @@ $purchaseOptions = [
     'masculino' => [
         '1 camiseta' => [
             'url' => 'https://www.mercadolivre.com.br/camiseta-masculina-arata-gola-careca-malha-mid-fio-40/up/MLBU5269194288',
-            'price' => 11390 ,
+            'price' => 8690,
             'quantity' => 1,
         ],
         'Kit com 2 camisetas' => [
             'url' => 'https://www.mercadolivre.com.br/kit-duas2-camiseta-careca-masculina-arata-malha-mid-fio-40/up/MLBU5420045889?picker=true&quantity=1',
-            'price' => 18990,
+            'price' => 15990,
             'quantity' => 2,
         ],
         'Kit com 3 camisetas' => [
             'url' => 'https://www.mercadolivre.com.br/kit-tres3-camiseta-careca-masculino-arata-malha-mid-fio-40/up/MLBU5431006185',
-            'price' => 26990,
+            'price' => 21990,
             'quantity' => 3,
+        ],
+        'Kit com 5 camisetas' => [
+            'url' => '',
+            'price' => 33290,
+            'quantity' => 5,
         ],
     ],
     'feminino' => [
         '1 camiseta' => [
             'url' => 'https://www.mercadolivre.com.br/camiseta-careca-feminina-arata-malha-mid-fio-40/up/MLBU5231967093',
-            'price' => 10990,
+            'price' => 7790,
             'quantity' => 1,
         ],
         'Kit com 2 camisetas' => [
             'url' => 'https://www.mercadolivre.com.br/kit-duas-2-camiseta-careca-feminina-arata-malha-mid-fio-40/up/MLBU5456444349',
-            'price' => 17990,
+            'price' => 14290,
             'quantity' => 2,
         ],
         'Kit com 3 camisetas' => [
             'url' => 'https://www.mercadolivre.com.br/kit-tres-3-camiseta-careca-feminina-arata-malha-mid-fio-40/up/MLBU5418183921',
-            'price' => 24990,
+            'price' => 19690,
             'quantity' => 3,
+        ],
+        'Kit com 5 camisetas' => [
+            'url' => '',
+            'price' => 29790,
+            'quantity' => 5,
         ],
     ],
 ];
@@ -56,7 +66,7 @@ $purchaseOptions = [
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=6.3">
+    <link rel="stylesheet" href="style.css?v=6.4">
 </head>
 <body>
     <?php include "header.php"; ?>
@@ -110,7 +120,13 @@ $purchaseOptions = [
                                             </span>
                                         </a>
                                     <?php else: ?>
-                                        <span class="purchase-option-disabled"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> <small>Link em breve</small></span>
+                                        <span class="purchase-option-disabled">
+                                            <span class="purchase-label"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?><small>Link em breve</small></span>
+                                            <span class="purchase-price">
+                                                <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
+                                                <small>R$ <?= number_format($option['price'] / (100 * $option['quantity']), 2, ',', '.') ?> por camiseta</small>
+                                            </span>
+                                        </span>
                                     <?php endif; ?>
                                 </li>
                             <?php endforeach; ?>
@@ -160,7 +176,13 @@ $purchaseOptions = [
                                             </span>
                                         </a>
                                     <?php else: ?>
-                                        <span class="purchase-option-disabled"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?> <small>Link em breve</small></span>
+                                        <span class="purchase-option-disabled">
+                                            <span class="purchase-label"><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?><small>Link em breve</small></span>
+                                            <span class="purchase-price">
+                                                <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
+                                                <small>R$ <?= number_format($option['price'] / (100 * $option['quantity']), 2, ',', '.') ?> por camiseta</small>
+                                            </span>
+                                        </span>
                                     <?php endif; ?>
                                 </li>
                             <?php endforeach; ?>
