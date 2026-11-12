@@ -56,7 +56,7 @@ $purchaseOptions = [
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=6.1">
+    <link rel="stylesheet" href="style.css?v=6.2">
 </head>
 <body>
     <?php include "header.php"; ?>
@@ -96,6 +96,17 @@ $purchaseOptions = [
                             Um produto desenvolvido para quem valoriza qualidade premium, conforto, tecnologia e precisão em cada detalhe.
                         </p>
                     </details>
+                    <section class="purchase-price-summary" aria-label="Preços dos kits masculinos">
+                        <h4>Preços dos kits</h4>
+                        <ul>
+                            <?php foreach ($purchaseOptions['masculino'] as $label => $option): ?>
+                                <li>
+                                    <span><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></span>
+                                    <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </section>
                     <div class="purchase-dropdown">
                         <button type="button" class="button button-primary purchase-toggle" aria-expanded="false" aria-controls="purchase-masculino" aria-label="Comprar camisetas masculinas">
                             Comprar <span class="purchase-chevron" aria-hidden="true"></span>
@@ -153,6 +164,17 @@ $purchaseOptions = [
                             Um produto desenvolvido para quem valoriza qualidade premium, conforto, tecnologia e precisão em cada detalhe.
                         </p>
                     </details>
+                    <section class="purchase-price-summary" aria-label="Preços dos kits femininos">
+                        <h4>Preços dos kits</h4>
+                        <ul>
+                            <?php foreach ($purchaseOptions['feminino'] as $label => $option): ?>
+                                <li>
+                                    <span><?= htmlspecialchars($label, ENT_QUOTES, 'UTF-8') ?></span>
+                                    <strong>R$ <?= number_format($option['price'] / 100, 2, ',', '.') ?></strong>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </section>
                     <div class="purchase-dropdown">
                         <button type="button" class="button button-primary purchase-toggle" aria-expanded="false" aria-controls="purchase-feminino" aria-label="Comprar camisetas femininas">
                             Comprar <span class="purchase-chevron" aria-hidden="true"></span>

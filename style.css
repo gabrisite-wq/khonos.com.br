@@ -616,6 +616,41 @@ footer {
     font-size: 0.7rem;
 }
 
+.purchase-price-summary {
+    margin: 0.75rem 0;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid var(--gold);
+    background: var(--surface-warm);
+    font-family: var(--font-ui);
+}
+
+.purchase-price-summary h4 {
+    margin: 0 0 0.35rem;
+    color: var(--terracotta);
+    font-size: 0.9rem;
+}
+
+.purchase-price-summary ul {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.purchase-price-summary li {
+    display: flex;
+    justify-content: space-between;
+    gap: 0.75rem;
+    color: var(--ink);
+    font-size: 0.9rem;
+}
+
+.purchase-price-summary strong {
+    flex: 0 0 auto;
+    color: var(--terracotta);
+}
+
 .purchase-options a:hover,
 .purchase-options a:focus-visible {
     color: var(--green);
