@@ -17,7 +17,7 @@ $purchaseOptions = [
             'quantity' => 3,
         ],
         'Kit com 5 camisetas' => [
-            'url' => '',
+            'url' => 'https://www.mercadolivre.com.br/kit-cinco-5-camiseta-careca-masc-arata-malha-grid-fio-40/up/MLBU5899669540?pdp_filters=item_id%3AMLB7985696852',
             'price' => 33290,
             'quantity' => 5,
         ],
@@ -39,7 +39,7 @@ $purchaseOptions = [
             'quantity' => 3,
         ],
         'Kit com 5 camisetas' => [
-            'url' => '',
+            'url' => 'https://www.mercadolivre.com.br/kit-cinco-5-camiseta-careca-femini-arata-malha-grid-fio-40/up/MLBU5845777455?pdp_filters=item_id%3AMLB7985941288',
             'price' => 29790,
             'quantity' => 5,
         ],
