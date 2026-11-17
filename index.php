@@ -18,7 +18,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     
-    <link rel="stylesheet" href="style.css?v=6.1">
+    <link rel="stylesheet" href="style.css?v=6.5">
 </head>
 <body>
     <?php include "header.php"; ?>
@@ -86,6 +86,21 @@
                 <a class="button button-secondary" href="https://wa.me/message/5CULJK6YITB4O1">Falar pelo WhatsApp</a>
             </div>
         </section>
+
+        <section class="home-location" aria-labelledby="location-title">
+            <div class="home-location__content">
+                <span class="eyebrow">Onde estamos</span>
+                <h2 id="location-title">Encontre a Khonos</h2>
+                <p>Consulte nossa localização e os horários atualizados no Google Maps. Planeje sua rota antes de sair.</p>
+                <a class="button button-primary" href="https://www.google.com/maps?cid=6453989757746772572" target="_blank" rel="noopener noreferrer">Ver localização e traçar rota <span class="visually-hidden">(abre em nova aba)</span></a>
+            </div>
+            <iframe class="home-location__map"
+                src="https://maps.google.com/maps?cid=6453989757746772572&amp;hl=pt-BR&amp;output=embed"
+                title="Localização da Khonos confecções Ltda no Google Maps"
+                width="600" height="400" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </section>
+
     </main>
     <?php include "footer.php"; ?>
 

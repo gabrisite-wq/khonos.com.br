@@ -1364,6 +1364,49 @@ footer {
     margin-top: 0.5rem;
 }
 
+.home-location {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    margin-top: clamp(2rem, 5vw, 4rem);
+    padding: 0;
+    background: var(--surface-warm);
+}
+
+.home-location__content {
+    min-width: 0;
+    padding: clamp(1.5rem, 4vw, 3rem);
+    align-self: center;
+}
+
+.home-location h2 {
+    color: var(--terracotta);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+}
+
+.home-location p {
+    color: var(--muted);
+}
+
+.home-location .button {
+    max-width: 100%;
+    white-space: normal;
+    text-align: center;
+}
+
+.home-location__map {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: clamp(20rem, 45vw, 28rem);
+    border: 0;
+}
+
+@media (min-width: 768px) {
+    .home-location {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    }
+}
+
 .home-contact.cta {
     position: relative;
     margin-top: clamp(2rem, 5vw, 4rem);
